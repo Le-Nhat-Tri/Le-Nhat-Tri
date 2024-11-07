@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.red { 
+    background-color: red; 
+    width: 40px; 
+    height: 40px; 
+    z-index: 1; 
+}
+
+.light-blue { background-color: lightblue; }
+.dark-blue { background-color: darkblue; }
+.purple { background-color: purple; }
+.orange { background-color: orange; }
+.yellow { background-color: yellow; }
+.green { background-color: green; }
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate(60px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(60px) rotate(-360deg);
+    }
+}
+
+/* Các trái tim màu sẽ quay xung quanh trái tim đỏ */
+.light-blue {
+    animation: rotate 12s linear infinite; /* Tăng thời gian quay */
+}
+
+.dark-blue {
+    animation: rotate 12s linear infinite;
+    animation-delay: 2s; /* Độ trễ tăng lên */
+}
+
+.purple {
+    animation: rotate 12s linear infinite;
+    animation-delay: 4s; /* Độ trễ tăng lên */
+}
+
+.orange {
+    animation: rotate 12s linear infinite;
+    animation-delay: 6s; /* Độ trễ tăng lên */
+}
+
+.yellow {
+    animation: rotate 12s linear infinite;
+    animation-delay: 8s; /* Độ trễ tăng lên */
+}
+
+.green {
+    animation: rotate 12s linear infinite;
+    animation-delay: 10s; /* Độ trễ tăng lên */
+}
+.audio-player {
+    position: absolute;
+    top: 10px;  /* Khoảng cách từ trên cùng */
+    right: 10px;  /* Khoảng cách từ bên phải */
+    z-index: 2;  /* Đảm bảo rằng nó nằm trên các phần tử khác */
